@@ -21,7 +21,6 @@ public class Mirath {
     private String nassibFardi;    // النصيب الفردي لكل وارث
 
     public  Mirath(Warith warith, int nbr, String sharh, int bast, int maqam, boolean ta3seeb, int ro2os) {
-        // TODO assert maqam != 0 & sharh != null
         this.warith = warith;
         this.nbr = nbr;
         this.sharh = sharh;
