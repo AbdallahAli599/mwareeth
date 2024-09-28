@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#142340"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".calc.CalcActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".calc.calcActivity">
+
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/calcActivityStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="22sp"
+            android:text="@string/calc_sex_tv"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio_flat_selector"
+                android:button="@android:color/transparent"
+                android:checked="true"
+                style="@style/calcActivityStyle"
+                android:textSize="22sp"
+                android:text="@string/calc_male_rb"
+                android:textColor="@color/radio_flat_text_selector" />
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio_flat_selector"
+                android:button="@android:color/transparent"
+                style="@style/calcActivityStyle"
+                android:textSize="22sp"
+                android:text="@string/calc_female_rb"
+                android:textColor="@color/radio_flat_text_selector" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_son_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_sonOfSon_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_RealSis_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_sonOfSon_tv" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_sisFromDad_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp"/>
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_sisFromMom_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp"/>
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_SonOfBroFromDad_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp"/>
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_uncleFromDad_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp"/>
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_cousinFromDad_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/calc_grandDad_Switch"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/calc_grandMom_Switch"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/calc_grandMa_Switch"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/calc_son_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_son_tv"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_sonOfSon_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/sonOfSon"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_RealSis_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="@string/realSis"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_sisFromDad_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/sisFromDad"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_sisFromMom_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/sisFromMom"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_SonOfBroFromDad_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/sonForBroFromDad"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_uncleFromDad_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/uncleFromDad"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_cousinFromDad_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/cousinFromDad"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_grandDad_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/grandpa"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_grandMom_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/grandMom"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/calc_grandMa_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/grandma"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/husSwitch"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="32dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/wife_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/wife_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_girl_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp"
+                    app:layout_constraintEnd_toStartOf="@+id/calc_girl_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/wife_tv" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_girlOfSon_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_realBro_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_broFromDad_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_broFromMom_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_realUncle_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_realCousin_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/calc_realSonOfBro_EditText"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxWidth="105dp"
+                    android:minWidth="85dp" />
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/dadSwitch"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp" />
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/momSwitch"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/wife_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/wife_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/calc_girl_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_girl_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wife_tv" />
+
+                <TextView
+                    android:id="@+id/calc_girlOfSon_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_girlOfSon_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_girl_tv" />
+
+                <TextView
+                    android:id="@+id/calc_realBro_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="@string/calc_realBro_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_girlOfSon_tv" />
+
+                <TextView
+                    android:id="@+id/calc_broFromDad_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_borFromDad_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_realBro_tv" />
+
+                <TextView
+                    android:id="@+id/calc_broFromMom_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_broFromMom_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_borFromDad_tv" />
+
+                <TextView
+                    android:id="@+id/calc_realUncle_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_realUncle_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_broFromMom_tv" />
+
+                <TextView
+                    android:id="@+id/calc_realCousin_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_realCousin_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_realUncle_tv" />
+
+                <TextView
+                    android:id="@+id/calc_realSonOfBro_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_realSonOfBro_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_realCousin_tv" />
+
+                <TextView
+                    android:id="@+id/calc_dad_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_dad_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_realSonOfBro_tv" />
+
+                <TextView
+                    android:id="@+id/calc_mom_tv"
+                    style="@style/calcActivityStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/blue"
+                    android:minWidth="500dp"
+                    android:text="@string/calc_mom_tv"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calc_dad_tv" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:paddingBottom="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/test">
+
+            <Button
+                android:id="@+id/new_qes_btn"
+                style="@style/calcActivityStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/calc_btn"
+                android:text="@string/newQues"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/answer_ques_btn"
+                style="@style/calcActivityStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/calc_btn"
+                android:text="@string/answerQues"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cash_et"
+                style="@style/calcActivityStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/calcActivityStyle"
+                android:textColor="@color/white"
+                android:text="@string/cash_tv"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
